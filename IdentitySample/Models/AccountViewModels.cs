@@ -64,6 +64,38 @@ namespace IdentitySample.Models
 
     public class RegisterViewModel
     {
+        //mwilliams:  Add Custom properties
+        [Required]
+        [StringLength(50)]
+        [Display(Name ="First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(65)]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [StringLength(150)]
+        public string Address { get; set; }
+
+        [Required]
+        [StringLength(60)]
+        public string City { get; set; }
+
+        [Required]
+        [StringLength(7)]
+        [Display(Name = "Postal Code")]
+        [DataType(DataType.PostalCode)]
+        public string PostalCode { get; set; }
+
+        [Required]
+        [StringLength(2)]
+        public string Province { get; set; }
+
+        //mwilliams:  end custom properties
+
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
