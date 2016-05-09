@@ -81,6 +81,7 @@ namespace IdentitySample.Controllers
                 if(!await UserManager.IsEmailConfirmedAsync(user.Id))
                 {
                     ModelState.AddModelError("", "You must have a confirmed email to log on.");
+                    ViewBag.EmailNotConfirmed = true;
                     return View(model);
                 }
             }
